@@ -94,7 +94,7 @@ const contageRegressima = () => {
     zerar()
     return
   }
-  tempoDecorridoEmsegundos -= 1
+  tempoDecorridoEmSegundos -= 1
   console.log('Temporizador: ' + tempoDecorridoEmSegundos);
   mostraTempo()
 }
