@@ -14,7 +14,7 @@ const musicaDeFinalizacao = new Audio('./sons/beep.mp3')
 const startPauseBt = document.querySelector('#start-pause')
 const iniciarOupausarBt = document.querySelector("#start-pause span")
 const imagemDecomecoEPause = document.querySelector('.app__card-primary-butto-icon')
-let tempoDecorridoEmsegundos = 10;
+let tempoDecorridoEmsegundos = 1500;
 let intervaloId = null;
 
 
