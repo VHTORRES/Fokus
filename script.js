@@ -14,7 +14,7 @@ const musicaDeFinalizacao = new Audio('./sons/beep.mp3')
 const startPauseBt = document.querySelector('#start-pause')
 const iniciarOupausarBt = document.querySelector("#start-pause span")
 const imagemDecomecoEPause = document.querySelector('.app__card-primary-butto-icon')
-let tempoDecorridoEmsegundos = 1500;
+let tempoDecorridoEmSegundos = 1500;
 let intervaloId = null;
 
 
@@ -67,23 +67,23 @@ function alterarContexto(contexto) {
 focoBt.addEventListener("click", () => {
   alterarContexto("foco");
   focoBt.classList.add("active");
-  tempoDecorridoEmsegundos = 1500
+  tempoDecorridoEmSegundos = 1500
 });
 
 curtoBt.addEventListener("click", () => {
   alterarContexto("descanso-curto");
   curtoBt.classList.add("active");
-  tempoDecorridoEmsegundos = 300
+  tempoDecorridoEmSegundos = 300
 });
 
 longoBt.addEventListener("click", () => {
   alterarContexto("descanso-longo");
   longoBt.classList.add("active");
-  tempoDecorridoEmsegundos = 900
+  tempoDecorridoEmSegundos = 900
 });
 
 const contageRegressima = () => {
-  if (tempoDecorridoEmsegundos <= 0) {
+  if (tempoDecorridoEmSegundos <= 0) {
     musicaDeFinalizacao.play()
     alert('Tempo Finaliado')
     const focoAtivo = html.getAttribute("data-contexto") == 'foco'
@@ -95,7 +95,7 @@ const contageRegressima = () => {
     return
   }
   tempoDecorridoEmsegundos -= 1
-  console.log('Temporizador: ' + tempoDecorridoEmsegundos);
+  console.log('Temporizador: ' + tempoDecorridoEmSegundos);
   mostraTempo()
 }
 
@@ -121,7 +121,7 @@ function zerar() {
 }
 
 function mostraTempo() {
-  const tempo = new Date(tempoDecorridoEmsegundos * 1000)
+  const tempo = new Date(tempoDecorridoEmSegundos * 1000)
   const tempoFormatado = tempo.toLocaleTimeString('pt-br', {minute: '2-digit', second: '2-digit'})
   tempoNaTela.innerHTML = `${tempoFormatado}`
 }
